@@ -1,11 +1,11 @@
 package Flowers;
 
 public class Flower {
-    String country;
-    int price;
+    private final String country;
+    private final int price;
     static int counter = 0;
 
-    public Flower (String country, int price) {
+    public Flower(String country, int price) {
         this.country = country;
         this.price = price;
         Flower.counter++;

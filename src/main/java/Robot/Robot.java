@@ -9,7 +9,7 @@ public class Robot {
         UP,
         DOWN,
         LEFT,
-        RIGHT;
+        RIGHT
     }
 
     public Robot(int x, int y, Direction direction) {
@@ -46,7 +46,7 @@ public class Robot {
 
     public void turnRight() {
         if (direction == Direction.UP) {
-            Direction direction = Direction.RIGHT;
+            direction = Direction.RIGHT;
         } else if (direction == Direction.LEFT) {
             direction = Direction.UP;
         } else if (direction == Direction.DOWN) {

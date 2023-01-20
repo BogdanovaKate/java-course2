@@ -12,6 +12,11 @@ public class Money {
     public Money multiply(int multiplier) {
         int a = rub * multiplier;
         int b = penny * multiplier;
+        int z = b % 100;
+        if (b >= 100) {
+            a++;
+            b = z;
+        }
         return new Money(a, b);
     }
 
@@ -20,7 +25,7 @@ public class Money {
         int b = penny + other.penny;
         int z = b % 100;
         if (b >= 100) {
-            a = rub + other.rub + 1;
+            a++;
             b = z;
         }
         return new Money(a, b);
@@ -30,8 +35,8 @@ public class Money {
         int a = rub - other.rub;
         int b = penny - other.penny;
         int z = 100 + b;
-        if (b < 0 & a > 0) {
-            a = rub - other.rub - 1;
+        if (b < 0 && a > 0) {
+            a--;
             b = z;
         }
         return new Money(a, b);

@@ -17,7 +17,10 @@ public class Engine {
         System.out.println("Engine is stopping");
     }
 
-    String Engine = "Engine{" + "power=" + power + " company='" + company + '\'' + '}';
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
     @Override
     public String toString() {
