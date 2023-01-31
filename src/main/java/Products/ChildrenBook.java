@@ -9,4 +9,5 @@ public class ChildrenBook extends Book {
     public double getSalePrice() {
         return getRegularPrice()*0.6;
     }
+
 }
