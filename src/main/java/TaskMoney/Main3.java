@@ -9,7 +9,7 @@ public class Main3 {
         Money m4 = m1.minus(m2);
         m4.print();
         Money m5 = new Money(2,80);
-        Money m6 = m5.multiply(27);
+        Money m6 = m5.multiply(6);
         m6.print();
     }
 }

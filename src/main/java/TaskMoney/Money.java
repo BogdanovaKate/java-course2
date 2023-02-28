@@ -14,7 +14,7 @@ public class Money {
         int b = penny * multiplier;
         int z = b % 100;
         if (b >= 100) {
-            a++;
+            a = a + (b - z) / 100;
             b = z;
         }
         return new Money(a, b);
@@ -23,10 +23,9 @@ public class Money {
     public Money plus(Money other) {
         int a = rub + other.rub;
         int b = penny + other.penny;
-        int z = b % 100;
         if (b >= 100) {
             a++;
-            b = z;
+            b = b % 100;
         }
         return new Money(a, b);
     }

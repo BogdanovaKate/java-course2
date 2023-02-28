@@ -1,7 +1,5 @@
 package Robot;
 
-import com.sun.javafx.scene.traversal.Direction;
-
 public class Main {
     public static void main(String[] args) {
         Robot robot = new Robot(5, 5, Robot.Direction.UP);
@@ -23,85 +21,64 @@ public class Main {
     }
 
     public static void moveRobot(Robot robot1, int toX, int toY) {
-        int x = robot1.getX();
-        int y = robot1.getY();
-        Robot.Direction direction = robot1.getDirection();
-        if (toX > x) {
-            if (direction == Robot.Direction.DOWN) {
+        if (toX > robot1.getX()) {
+            if (robot1.getDirection() == Robot.Direction.DOWN) {
                 robot1.turnLeft();
-                direction = robot1.getDirection();
-            } else if (direction == Robot.Direction.UP) {
+            } else if (robot1.getDirection() == Robot.Direction.UP) {
                 robot1.turnRight();
-                direction = robot1.getDirection();
-            } else if (direction == Robot.Direction.LEFT) {
-                robot1.turnRight();
-                robot1.turnRight();
-                direction = robot1.getDirection();
-            }
-            robot1.stepForward();
-            x = robot1.getX();
-            while (toX > x) {
-                robot1.stepForward();
-                x = robot1.getX();
-            }
-        }
-        if (toX < x) {
-            if (direction == Robot.Direction.RIGHT) {
-                robot1.turnRight();
-                robot1.turnRight();
-                direction = robot1.getDirection();
 
-            } else if (direction == Robot.Direction.DOWN) {
+            } else if (robot1.getDirection() == Robot.Direction.LEFT) {
                 robot1.turnRight();
-                direction = robot1.getDirection();
+                robot1.turnRight();
+            }
+            robot1.stepForward();
+            while (toX > robot1.getX()) {
+                robot1.stepForward();
+            }
+        }
+        if (toX < robot1.getX()) {
+            if (robot1.getDirection() == Robot.Direction.RIGHT) {
+                robot1.turnRight();
+                robot1.turnRight();
 
-            } else if (direction == Robot.Direction.UP) {
+            } else if (robot1.getDirection() == Robot.Direction.DOWN) {
+                robot1.turnRight();
+
+            } else if (robot1.getDirection() == Robot.Direction.UP) {
                 robot1.turnLeft();
-                direction = robot1.getDirection();
             }
             robot1.stepForward();
-            x = robot1.getX();
-            while (toX < x) {
+            while (toX < robot1.getX()) {
                 robot1.stepForward();
-                x = robot1.getX();
             }
         }
-        if (toY > y) {
-            if (direction == Robot.Direction.DOWN) {
+        if (toY > robot1.getY()) {
+            if (robot1.getDirection() == Robot.Direction.DOWN) {
                 robot1.turnRight();
                 robot1.turnRight();
-                direction = robot1.getDirection();
-            } else if (direction == Robot.Direction.RIGHT) {
+            } else if (robot1.getDirection() == Robot.Direction.RIGHT) {
                 robot1.turnLeft();
-                direction = robot1.getDirection();
-            } else if (direction == Robot.Direction.LEFT) {
+            } else if (robot1.getDirection() == Robot.Direction.LEFT) {
                 robot1.turnRight();
-                direction = robot1.getDirection();
             }
             robot1.stepForward();
-            y = robot1.getY();
-            while (toY > y) {
+            while (toY > robot1.getY()) {
                 robot1.stepForward();
-                y = robot1.getY();
             }
         }
-        if (toY < y) {
-            if (direction == Robot.Direction.UP) {
+        if (toY < robot1.getY()) {
+            if (robot1.getDirection() == Robot.Direction.UP) {
                 robot1.turnLeft();
                 robot1.turnLeft();
-                direction = robot1.getDirection();
-            } else if (direction == Robot.Direction.RIGHT) {
+            } else if (robot1.getDirection() == Robot.Direction.RIGHT) {
                 robot1.turnRight();
-                direction = robot1.getDirection();
-            } else if (direction == Robot.Direction.LEFT) {
+
+            } else if (robot1.getDirection() == Robot.Direction.LEFT) {
                 robot1.turnLeft();
-                direction = robot1.getDirection();
             }
             robot1.stepForward();
-            y = robot1.getY();
-            while (toY < y) {
+            while (toY < robot1.getY()) {
                 robot1.stepForward();
-                y = robot1.getY();
             }
         }
     }
