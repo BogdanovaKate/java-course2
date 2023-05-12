@@ -24,10 +24,10 @@ public class Processor {
 
     public static void main(String[] args) {
         List<Integer> ints = new ArrayList<>();
-        ints.add(new Integer(1));
-        ints.add(new Integer(2));
-        ints.add(new Integer(3));
-        ints.add(new Integer(4));
+        ints.add(1);
+        ints.add(2);
+        ints.add(3);
+        ints.add(4);
         processInts(
                 ints,
                 integer -> (integer.intValue()%2) == 0,

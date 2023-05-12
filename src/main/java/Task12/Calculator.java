@@ -1,10 +1,9 @@
 package Task12;
 
 public class Calculator {
-    int result;
 
     public double calculate(Operationable operationable, int argument1, int argument2) {
         operationable.calculate(argument1, argument2);
-        return result;
+        return 0;
     }
 }

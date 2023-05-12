@@ -16,7 +16,7 @@ public class Main {
     }
 
     public static Collection<Box> filterBySize(Iterator<Box> iterator, int size) {
-        ArrayList<Box> list = new ArrayList();
+        ArrayList<Box> list = new ArrayList<>();
         while (iterator.hasNext()) {
             Box element = iterator.next();
             if (element.getSize() < size) {

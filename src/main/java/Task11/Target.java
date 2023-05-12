@@ -14,14 +14,13 @@ public class Target {
             if (a != null) {
                 return new int[]{i, a};
             }
-
         }
         throw new RuntimeException("Не найдена сумма");
     }
 
     public static void main(String[] args) {
         Target target = new Target();
-        int[] nums = new int[]{10, 70, 20, 60, 40};
+        int[] nums = new int[]{10, 50, 10, 60, 50};
         System.out.println(Arrays.toString(target.twoSum(nums, 100)));
 
     }
