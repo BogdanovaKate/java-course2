@@ -75,11 +75,14 @@ public class Tables {
             selectStudent.setInt(1, 3);
             selectStudent.setInt(2, 20);
             selectStudent.setDouble(3, 100);
-            int i = statement.executeUpdate("UPDATE student set scholarship = 90 where name = 'John';");
             ResultSet rs = selectStudent.executeQuery();
             while (rs.next()) {
-                String studentName = rs.getString("name");
-                System.out.println(studentName);
+                System.out.println(rs.getString("name"));
+            }
+            int i = statement.executeUpdate("UPDATE student set scholarship = 90 where name = 'John';");
+            ResultSet resultSet = selectStudent.executeQuery();
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("name"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
